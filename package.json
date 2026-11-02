@@ -1,0 +1,53 @@
+{
+  "name": "effect-agent-bind",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Allowlisted coding-agent catalog, probe, selection, invocation, and usage adapter.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/storywithoutend/effect-agent-bind.git"
+  },
+  "homepage": "https://github.com/storywithoutend/effect-agent-bind#readme",
+  "bugs": {
+    "url": "https://github.com/storywithoutend/effect-agent-bind/issues"
+  },
+  "files": [
+    "dist",
+    "docs",
+    "LICENSE",
+    "README.md"
+  ],
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "effect-agent-bind": "./dist/cli/main.js"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./catalog": "./dist/catalog/index.js",
+    "./probe": "./dist/probe/index.js",
+    "./resolve": "./dist/resolve/index.js",
+    "./invocation": "./dist/invocation/index.js",
+    "./usage": "./dist/usage/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "cli": "node --import tsx src/cli/main.ts",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "effect": "^3.16.12"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.9"
+  }
+}
