@@ -20,7 +20,7 @@
   ],
   "types": "./dist/index.d.ts",
   "bin": {
-    "effect-agent-bind": "./dist/cli/main.js"
+    "effect-agent-bind": "dist/cli/main.js"
   },
   "exports": {
     ".": "./dist/index.js",
